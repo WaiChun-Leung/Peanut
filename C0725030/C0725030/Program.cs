@@ -20,5 +20,7 @@ namespace C0725030
             Thread.Sleep(4000);
             Console.WriteLine("Download Completed!");
         }
+
+        public int Add(int a, int b) { return a + b; }
     }
 }
