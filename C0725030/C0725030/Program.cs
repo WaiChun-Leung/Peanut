@@ -24,9 +24,10 @@ namespace C0725030
         //    });    //This is asynchronous methods look like
         //}
 
-        static void Download()
+        static async void Download()
         {
-            Network.Download();
+            await Network.Download();
+            Console.WriteLine("Download Complete!");
         }
 
         //Imaginary external network library
