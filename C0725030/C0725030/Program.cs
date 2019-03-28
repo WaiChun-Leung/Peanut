@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -26,8 +27,15 @@ namespace C0725030
 
         static async void Download()
         {
-            await Network.Download();
-            Console.WriteLine("Download Complete!");
+            HttpClient client = new HttpClient();
+
+            var data = await client.GetStringAsync("http://ibm.com");
+            //Console.WriteLine("Download Complete!" +data); OR
+            Console.WriteLine(data);
+            // TO DO: save or store each line of the webpage into an entry
+            // in a list
+            // look at the Assignment 1
+            List mylist = new List();
         }
 
         //Imaginary external network library
@@ -41,4 +49,4 @@ namespace C0725030
         }
     }
 }
-
+//Watch video on lynda.com the C# language
