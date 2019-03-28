@@ -15,13 +15,29 @@ namespace C0725030
             Download();
             Console.ReadLine();
         }
+        //static void Download()
+        //{
+        //    Task.Run(() =>
+        //    {
+        //        Thread.Sleep(4000);
+        //        Console.WriteLine("Download Complete!"); //will show after 4 seconds
+        //    });    //This is asynchronous methods look like
+        //}
+
         static void Download()
         {
-            Task.Run(() =>
+            Network.Download();
+        }
+
+        //Imaginary external network library
+
+        class Network
+        {
+            static public Task Download() //Task is class because is uppercase and lightblue
             {
-                Thread.Sleep(4000);
-                Console.WriteLine("Download Complete!");
-            });
+                return Task.Run(() => Thread.Sleep(4000));
+            }
         }
     }
 }
+
