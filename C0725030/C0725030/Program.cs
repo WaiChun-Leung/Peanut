@@ -17,10 +17,11 @@ namespace C0725030
         }
         static void Download()
         {
-            Thread.Sleep(4000);
-            Console.WriteLine("Download Completed!");
+            Task.Run(() =>
+            {
+                Thread.Sleep(4000);
+                Console.WriteLine("Download Complete!");
+            });
         }
-
-        public int Add(int a, int b) { return a + b; }
     }
 }
